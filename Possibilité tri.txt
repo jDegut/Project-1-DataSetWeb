@@ -1,0 +1,37 @@
+sexe, 1 = garçon 2 = fille;
+
+Ordre tri Departement>sexe>Prenom>Annais
+Rangement : ?/sexe/prenom/annais/dpt/nombre
+
+Idéé tri : 
+    -Dans chaque département voir répartition du prénom X sur les années X à X  sur un sexe défini(sql?)
+    -De façon global voir répartition du prénom X sur les années X à X sur un sexe défini (sql?)
+    -Pareil sur une même année
+    -répartition naissance par département et année naissance ? (sql?)
+    -Proportion naissance garçon fille naissance dans un departement sur X années ? Façon globale ? (sql?)
+    -Repartition d'un prénom pour les deux sexes, sur X années (faire hors sql)
+    
+    Affichage : graphique ? 
+
+
+    -Voir le prénom le plus/moins donnée sur x année ou sur une période (faire hors sql)
+    
+    Affichage : simple ligne de texte ?
+
+    1/
+    "select prenom, birth, numb from main where dept='(var.dept)' and prenom='(Var.prenom)' and birth between '(var.borninf)' and '(var.bornsup)' and sexe='(var.sexe)' "
+        Affichage : Graphique baton, axe des abcsisse : année, axe des ordonnées: valeur
+
+    2/
+    "select prenom, birth, bom from main group by birth where prenom='(Var.prenom)' and birth between '(var.borninf)' and '(var.bornsup)' and sexe='(var.sexe)' "
+        Affichage : Graphique baton, axe des abcsisse : année, axe des ordonnées: valeur
+
+    3/ C'est la même que les deux premières ?
+
+    4/
+    "SELECT dpt, (sum(numb)) as nb_naissance FROM `main` group by dpt where birth between '(var.borninf)' and '(var.bornsup)' and sexe='(var.sexe)'
+    Affichage : Graphique baton, axe des abcsisse : année, axe des ordonnées: valeur
+        Note: le nombre d'année n'est pas donnée explicitement, on a un groupement d'année, si on veut par année on devrait faire un groupement de departement
+                il doit y avoir une autre solution par programmation et addition de résultat (on passe outre le sql)
+
+    5/6/7 Utiliser JS pour le faire, on demande des opérations mathématiques qui ne sont (???) pas réalisable en SQL

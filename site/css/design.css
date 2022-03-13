@@ -1,0 +1,286 @@
+@font-face {
+  font-family: Polya;
+  src: url(../font/POLYA.otf);
+}
+
+html {
+  font-size: 12px;
+  font-family: 'Arial', serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url(../img/221429.jpg) no-repeat center fixed;
+  -webkit-background-size: cover;
+  /* pour anciens Chrome et Safari */
+  background-size: cover;
+  /* version standardisée */
+}
+
+a#enter {
+  text-decoration: none;
+  color: white;
+}
+
+#titlecenter {
+  text-align: center;
+  margin-top: 30vh;
+  transform: translateY(-50%);
+  letter-spacing: 1.1rem;
+}
+
+#maintitle {
+  font-family: "Polya";
+  font-size: 70px;
+  font-weight: normal;
+  color: white;
+}
+
+#buttoncenter {
+  margin-top: -5vh;
+  text-align: center;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+}
+
+.center {
+  width: 180px;
+  height: 60px;
+  position: absolute;
+}
+
+.btn {
+  padding: 1.4rem 4.2rem;
+  padding-right: 3.1rem;
+  font-size: 1.4rem;
+  color: white;
+  letter-spacing: 1.1rem;
+  text-transform: uppercase;
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn:before,
+.btn:after {
+  content: '';
+  position: absolute;
+  transition: inherit;
+  z-index: -1;
+}
+
+.btn:hover {
+  color: black;
+  transition-delay: .5s;
+}
+
+.btn:hover:before {
+  transition-delay: 0s;
+}
+
+.btn:hover:after {
+  background: white;
+  transition-delay: .35s;
+}
+
+.from-center:before {
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 0;
+  border: 1px solid white;
+  border-left: 0;
+  border-right: 0;
+}
+
+.from-center:after {
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  background: white;
+}
+
+.from-center:hover:before {
+  left: 0;
+  width: 100%;
+}
+
+.from-center:hover:after {
+  top: 0;
+  height: 100%;
+}
+
+/** Table **/
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 2px solid rgb(74, 74, 74);
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+/** Menu Nav **/
+
+#menu {
+  margin-left: 4vh;
+  position: fixed;
+  float: left;
+  width: 40vh;
+  height: 100vh;
+  background-color: rgb(255, 255, 255, 0.70);
+}
+
+#logo {
+  margin-top: 6vh;
+  height: 8.9vh;
+}
+
+#navigation {
+  list-style-type: none;
+  padding-left: 0vh;
+  margin: 15vh 0 0 0;
+}
+
+#navigation li {
+  margin-top: 10vh;
+  text-align: center;
+}
+
+#navigation li a {
+  color: black;
+  font-size: 3vh;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+/** MainContent **/
+
+#mainContent {
+  position: absolute;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  border: solid black 4px;
+  border-radius: 20px;
+  padding: 2vh;
+  width: 50%;
+  height: auto;
+}
+
+#fieldOne {
+  width: 40vh;
+  border-color: black;
+}
+
+.right {
+  margin-left: 70vh;
+  background-color: rgb(255, 255, 255, 0.7);
+}
+
+.centered {
+  text-align: center;
+}
+
+.afterFloat {
+  clear: both;
+}
+
+
+.land {
+  fill: rgb(54, 67, 150);
+  fill-opacity: 1;
+  stroke: white;
+  stroke-opacity: 1;
+  stroke-width: 0.5;
+}
+
+.interactButton {
+  box-shadow: inset 1px 13px 19px -6px #224173;
+  background: linear-gradient(to bottom, #073175 5%, #4369b5 100%);
+  background-color: #073175;
+  border-radius: 7px;
+  border: 2px solid #241324;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 12px;
+  padding: 8px 14px;
+  text-decoration: none;
+  text-shadow: 0px 3px 2px #080a0f;
+  margin-bottom: 10px;
+}
+
+.interactButton:hover {
+  background: linear-gradient(to bottom, #4369b5 5%, #073175 100%);
+  background-color: #4369b5;
+}
+
+.interactButton {
+  position: relative;
+  top: 1px;
+}
+
+
+/** Canvas **/
+
+canvas {
+  background-color: #1c1b1b;
+}
+
+/** Carte **/
+
+path:hover {
+  fill: rgb(117, 122, 250);
+}
+
+
+/** Visibilité **/
+
+.infoText {
+  font-size: small;
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.visible {
+  display: block;
+  visibility: visible;
+}
+
+.cache {
+  display: none;
+  visibility: hidden;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.footer {
+    position: absolute;
+    margin-left: 40px;
+    bottom: 20px;
+}

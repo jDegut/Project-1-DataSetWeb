@@ -1,0 +1,40 @@
+#autocompletion {
+    width: inherit;
+    background-color: white;
+    line-height: 1.5;
+    position: absolute;
+}
+
+#autocompletion p {
+    margin: 0 0 0 0;
+    padding: 0 5px 0 5px;
+}
+
+#autocompletion p:hover {
+    background-color: aliceblue;
+    cursor: default;
+}
+
+#acdiv {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#acdiv * {
+    vertical-align: top;
+}
+
+#loading {
+    visibility: hidden;
+    width: 20px;
+}
+
+fieldset {
+    padding: 10px 0px 30px 50px;
+    width: 400px;
+}
+
+fieldset>div {
+    display: flex;
+    align-items: center;
+}

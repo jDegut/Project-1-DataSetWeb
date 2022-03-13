@@ -1,0 +1,71 @@
+- Dans chaque département voir répartition du prénom X sur les années X à X sur un sexe X
+( Choix 1 : Nombre de fois que le prénom a été attribué 
+Champs à remplir : prenom, année (intervalle ou une seule), sexe, dpt)
+
+Select name, birth, numb
+From main
+Where name = 'Clara' and dpt='42' and birth between 2000 and 2020 and sexe = '2'
+
+- De façon globale voir répartition du prénom X sur l'année X sur un sexe défini (pas possible de faire une requete pour toutes les années)
+( Choix 2 : Suivre l'évolution d'un prénom 
+Champs à remplir : prenom, année (une seule), sexe
+Affichage : faire cette requete pour chaque année et faire un graphique du nb en fonction de l'année )
+
+Select name, sum(numb)
+From main
+Where name = 'Clara' and sexe = '2' and birth = '2000'
+
+- Nb naissance dans département X et annee X
+( Choix 3 : Nombre de naissance dans un departement
+Champs à remplir : dpt, année (une seule), sexe )
+
+Select sum(numb) as nb_naissance
+From main
+Where dpt = '69' and birth = '2000'
+
+- Proportion naissance garçon/fille dans un departement X sur l'année X 
+( Choix 4 : Proportion naissance garçon/fille
+Champs à remplir : dpt, annee (une seule))
+
+Select birth, sexe, sum(numb) as nb_naissance
+From main 
+Where dpt = '69' and birth = '2020'
+Group by sexe
+
+(Pour la France entière
+
+Select birth, sexe, sum(numb) as nb_naissance
+From main 
+Where birth = '2020'
+Group by sexe)
+
+- Voir le prenom X le plus/moins donné dans un departement X et annee X
+( Choix 5 : Prénom le plus donné
+Champs à remplir : prenom, dpt, annee (une seule))
+
+#Le plus
+
+Select *
+From main 
+Where dpt = '69' and birth = '2020' and name != '_PRENOMS_RARES'
+Order by numb desc
+
+(Besoin de garder que la premiere ligne)
+
+Autre méthode
+
+Select *
+From main
+Where dpt = '69' and birth = '2020' and name != '_PRENOMS_RARES' and numb = (Select max(numb)
+                                                                             From main
+                                                                             Where dpt ='69' and birth = '2020' and name != '_PRENOMS_RARES')
+
+#Le moins
+
+Select *
+From main
+Where dpt = '69' and birth = '2020' and numb = (Select min(numb)
+                                                From main
+                                                Where dpt ='69' and birth = '2020')
+
+(Inutile pcq bcp de prenoms sont peu donnés et pas un seul)
