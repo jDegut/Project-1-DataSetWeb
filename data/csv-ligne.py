@@ -3,10 +3,10 @@ import csv, unidecode
 def written(data):
         file = open("main4.sql","w")
 
-        file.write("CREATE TABLE main (sexe INT NULL, name VARCHAR(200) NULL, birth INT NULL, dpt INT NULL, numb INT NULL);\n")
-        file.write("ALTER TABLE main ADD PRIMARY KEY(sexe, name, birth, dpt);\n\n")
+        file.write("CREATE TABLE `main` (`sexe` INT NULL, `name` VARCHAR(200) NULL, `birth` INT NULL, `dpt` INT NULL, `numb` INT NULL);\n")
+        file.write("ALTER TABLE `main` ADD PRIMARY KEY(`sexe`, `name`, `birth`, `dpt`);\n\n")
         for col in data :
-                line = "INSERT INTO main VALUES("
+                line = "INSERT INTO `main` VALUES("
                 for d in col :
                         if '"' not in d :
                                 line = line + d + ","

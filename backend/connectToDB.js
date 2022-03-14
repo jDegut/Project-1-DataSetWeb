@@ -6,10 +6,10 @@ let db;
 (async () => {
   try {
     db = await mysql.createConnection({
-      host: '141.94.206.67',
-      user: 'infop',
-      password: 'Infoprojetgroupe9',
-      database: 'mainbis'
+      host: 'localhost',
+      user: 'root',
+      password: '',
+      database: 'datawebset'
     });
     console.log('Connecté à la BD !');
   } catch (error) {
